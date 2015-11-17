@@ -1,2 +1,3 @@
 ###About myself
-######Hi, my name is Yong Jiang. I am also an MPA student at Maxwell. I am from China. Before I went to Syracuse, I worked in the China National Institution of Standardization (CNIS):  My previous job was scientific research project management. I am interested in data analysis, and hope to work in this when I back to China.
+
+Hi, my name is Yong Jiang. I am also an MPA student at Maxwell. I am from China. Before I went to Syracuse, I worked in the China National Institution of Standardization (CNIS):  My previous job was scientific research project management. I am interested in data analysis, and hope to work in this when I back to China.

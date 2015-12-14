@@ -1,0 +1,335 @@
+library(shiny)
+Immigration <- read.csv("errors.csv")
+#Create number of staff per year per center data frame 
+
+Con.Staff.1 <- Immigration[Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 1,]
+Con.Staff.2 <- Immigration[Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 2,]
+Con.Staff.3 <- Immigration[Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 3,]
+Con.Staff.4 <- Immigration[Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 4,]
+Con.Staff.5 <- Immigration[Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 5,]
+Con.Staff.6 <- Immigration[Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 6,]
+Con.Staff.7 <- Immigration[Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 7,]
+Con.Staff.8 <- Immigration[Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+con.num.1 <- length(unique(Con.Staff.1$Staff.ID))
+con.num.2 <- length(unique(Con.Staff.2$Staff.ID))
+con.num.3 <- length(unique(Con.Staff.3$Staff.ID))
+con.num.4 <- length(unique(Con.Staff.4$Staff.ID))
+con.num.5 <- length(unique(Con.Staff.5$Staff.ID))
+con.num.6 <- length(unique(Con.Staff.6$Staff.ID))
+con.num.7 <- length(unique(Con.Staff.7$Staff.ID))
+con.num.8 <- length(unique(Con.Staff.8$Staff.ID))
+
+con.num.staff <- c(con.num.1, con.num.2, con.num.3, con.num.4, con.num.5, con.num.6, con.num.7, con.num.8)
+
+ci.staff.1 <- Immigration[Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 1,]
+ci.staff.2 <- Immigration[Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 2,]
+ci.staff.3 <- Immigration[Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 3,]
+ci.staff.4 <- Immigration[Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 4,]
+ci.staff.5 <- Immigration[Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 5,]
+ci.staff.6 <- Immigration[Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 6,]
+ci.staff.7 <- Immigration[Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 7,]
+ci.staff.8 <- Immigration[Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+ci.num.1 <- length(unique(ci.staff.1$Staff.ID))
+ci.num.2 <- length(unique(ci.staff.2$Staff.ID))
+ci.num.3 <- length(unique(ci.staff.3$Staff.ID))
+ci.num.4 <- length(unique(ci.staff.4$Staff.ID))
+ci.num.5 <- length(unique(ci.staff.5$Staff.ID))
+ci.num.6 <- length(unique(ci.staff.6$Staff.ID))
+ci.num.7 <- length(unique(ci.staff.7$Staff.ID))
+ci.num.8 <- length(unique(ci.staff.8$Staff.ID))
+
+ci.num.staff <- c(ci.num.1, ci.num.2, ci.num.3, ci.num.4, ci.num.5, ci.num.6, ci.num.7, ci.num.8)
+
+cro.staff.1 <- Immigration[Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 1,]
+cro.staff.2 <- Immigration[Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 2,]
+cro.staff.3 <- Immigration[Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 3,]
+cro.staff.4 <- Immigration[Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 4,]
+cro.staff.5 <- Immigration[Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 5,]
+cro.staff.6 <- Immigration[Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 6,]
+cro.staff.7 <- Immigration[Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 7,]
+cro.staff.8 <- Immigration[Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+cro.num.1 <- length(unique(cro.staff.1$Staff.ID))
+cro.num.2 <- length(unique(cro.staff.2$Staff.ID))
+cro.num.3 <- length(unique(cro.staff.3$Staff.ID))
+cro.num.4 <- length(unique(cro.staff.4$Staff.ID))
+cro.num.5 <- length(unique(cro.staff.5$Staff.ID))
+cro.num.6 <- length(unique(cro.staff.6$Staff.ID))
+cro.num.7 <- length(unique(cro.staff.7$Staff.ID))
+cro.num.8 <- length(unique(cro.staff.8$Staff.ID))
+
+cro.num.staff <- c(cro.num.1, cro.num.2, cro.num.3, cro.num.4, cro.num.5, cro.num.6, cro.num.7, cro.num.8)
+
+eastny.staff.1 <- Immigration[Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 1,]
+eastny.staff.2 <- Immigration[Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 2,]
+eastny.staff.3 <- Immigration[Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 3,]
+eastny.staff.4 <- Immigration[Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 4,]
+eastny.staff.5 <- Immigration[Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 5,]
+eastny.staff.6 <- Immigration[Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 6,]
+eastny.staff.7 <- Immigration[Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 7,]
+eastny.staff.8 <- Immigration[Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+eastny.num.1 <- length(unique(eastny.staff.1$Staff.ID))
+eastny.num.2 <- length(unique(eastny.staff.2$Staff.ID))
+eastny.num.3 <- length(unique(eastny.staff.3$Staff.ID))
+eastny.num.4 <- length(unique(eastny.staff.4$Staff.ID))
+eastny.num.5 <- length(unique(eastny.staff.5$Staff.ID))
+eastny.num.6 <- length(unique(eastny.staff.6$Staff.ID))
+eastny.num.7 <- length(unique(eastny.staff.7$Staff.ID))
+eastny.num.8 <- length(unique(eastny.staff.8$Staff.ID))
+
+eastny.num.staff <- c(eastny.num.1, eastny.num.2, eastny.num.3, eastny.num.4, eastny.num.5, eastny.num.6, eastny.num.7, eastny.num.8)
+
+fgstaff1 <- Immigration[Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 1,]
+fgstaff2 <- Immigration[Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 2,]
+fgstaff3 <- Immigration[Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 3,]
+fgstaff4 <- Immigration[Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 4,]
+fgstaff5 <- Immigration[Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 5,]
+fgstaff6 <- Immigration[Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 6,]
+fgstaff7 <- Immigration[Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 7,]
+fgstaff8 <- Immigration[Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+fgnum1 <- length(unique(fgstaff1$Staff.ID))
+fgnum2 <- length(unique(fgstaff2$Staff.ID))
+fgnum3 <- length(unique(fgstaff3$Staff.ID))
+fgnum4 <- length(unique(fgstaff4$Staff.ID))
+fgnum5 <- length(unique(fgstaff5$Staff.ID))
+fgnum6 <- length(unique(fgstaff6$Staff.ID))
+fgnum7 <- length(unique(fgstaff7$Staff.ID))
+fgnum8 <- length(unique(fgstaff8$Staff.ID))
+
+fgnumstaff <- c(fgnum1, fgnum2, fgnum3, fgnum4, fgnum5, fgnum6, fgnum7, fgnum8)
+
+jamstaff1 <- Immigration[Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 1,]
+jamstaff2 <- Immigration[Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 2,]
+jamstaff3 <- Immigration[Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 3,]
+jamstaff4 <- Immigration[Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 4,]
+jamstaff5 <- Immigration[Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 5,]
+jamstaff6 <- Immigration[Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 6,]
+jamstaff7 <- Immigration[Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 7,]
+jamstaff8 <- Immigration[Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+jamnum1 <- length(unique(jamstaff1$Staff.ID))
+jamnum2 <- length(unique(jamstaff2$Staff.ID))
+jamnum3 <- length(unique(jamstaff3$Staff.ID))
+jamnum4 <- length(unique(jamstaff4$Staff.ID))
+jamnum5 <- length(unique(jamstaff5$Staff.ID))
+jamnum6 <- length(unique(jamstaff6$Staff.ID))
+jamnum7 <- length(unique(jamstaff7$Staff.ID))
+jamnum8 <- length(unique(jamstaff8$Staff.ID))
+
+jamnumstaff <- c(jamnum1, jamnum2, jamnum3, jamnum4, jamnum5, jamnum6, jamnum7, jamnum8)
+
+queensstaff1 <- Immigration[Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 1,]
+queensstaff2 <- Immigration[Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 2,]
+queensstaff3 <- Immigration[Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 3,]
+queensstaff4 <- Immigration[Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 4,]
+queensstaff5 <- Immigration[Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 5,]
+queensstaff6 <- Immigration[Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 6,]
+queensstaff7 <- Immigration[Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 7,]
+queensstaff8 <- Immigration[Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+queensnum1 <- length(unique(queensstaff1$Staff.ID))
+queensnum2 <- length(unique(queensstaff2$Staff.ID))
+queensnum3 <- length(unique(queensstaff3$Staff.ID))
+queensnum4 <- length(unique(queensstaff4$Staff.ID))
+queensnum5 <- length(unique(queensstaff5$Staff.ID))
+queensnum6 <- length(unique(queensstaff6$Staff.ID))
+queensnum7 <- length(unique(queensstaff7$Staff.ID))
+queensnum8 <- length(unique(queensstaff8$Staff.ID))
+
+queensnumstaff <- c(queensnum1, queensnum2, queensnum3, queensnum4, queensnum5, queensnum6, queensnum7, queensnum8)
+
+refstaff1 <- Immigration[Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 1,]
+refstaff2 <- Immigration[Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 2,]
+refstaff3 <- Immigration[Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 3,]
+refstaff4 <- Immigration[Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 4,]
+refstaff5 <- Immigration[Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 5,]
+refstaff6 <- Immigration[Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 6,]
+refstaff7 <- Immigration[Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 7,]
+refstaff8 <- Immigration[Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+refnum1 <- length(unique(refstaff1$Staff.ID))
+refnum2 <- length(unique(refstaff2$Staff.ID))
+refnum3 <- length(unique(refstaff3$Staff.ID))
+refnum4 <- length(unique(refstaff4$Staff.ID))
+refnum5 <- length(unique(refstaff5$Staff.ID))
+refnum6 <- length(unique(refstaff6$Staff.ID))
+refnum7 <- length(unique(refstaff7$Staff.ID))
+refnum8 <- length(unique(refstaff8$Staff.ID))
+
+refnumstaff <- c(refnum1, refnum2, refnum3, refnum4, refnum5, refnum6, refnum7, refnum8)
+
+richstaff1 <- Immigration[Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 1,]
+richstaff2 <- Immigration[Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 2,]
+richstaff3 <- Immigration[Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 3,]
+richstaff4 <- Immigration[Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 4,]
+richstaff5 <- Immigration[Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 5,]
+richstaff6 <- Immigration[Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 6,]
+richstaff7 <- Immigration[Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 7,]
+richstaff8 <- Immigration[Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+richnum1 <- length(unique(richstaff1$Staff.ID))
+richnum2 <- length(unique(richstaff2$Staff.ID))
+richnum3 <- length(unique(richstaff3$Staff.ID))
+richnum4 <- length(unique(richstaff4$Staff.ID))
+richnum5 <- length(unique(richstaff5$Staff.ID))
+richnum6 <- length(unique(richstaff6$Staff.ID))
+richnum7 <- length(unique(richstaff7$Staff.ID))
+richnum8 <- length(unique(richstaff8$Staff.ID))
+
+richnumstaff <- c(richnum1, richnum2, richnum3, richnum4, richnum5, richnum6, richnum7, richnum8)
+
+rockstaff1 <- Immigration[Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 1,]
+rockstaff2 <- Immigration[Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 2,]
+rockstaff3 <- Immigration[Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 3,]
+rockstaff4 <- Immigration[Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 4,]
+rockstaff5 <- Immigration[Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 5,]
+rockstaff6 <- Immigration[Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 6,]
+rockstaff7 <- Immigration[Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 7,]
+rockstaff8 <- Immigration[Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+rocknum1 <- length(unique(rockstaff1$Staff.ID))
+rocknum2 <- length(unique(rockstaff2$Staff.ID))
+rocknum3 <- length(unique(rockstaff3$Staff.ID))
+rocknum4 <- length(unique(rockstaff4$Staff.ID))
+rocknum5 <- length(unique(rockstaff5$Staff.ID))
+rocknum6 <- length(unique(rockstaff6$Staff.ID))
+rocknum7 <- length(unique(rockstaff7$Staff.ID))
+rocknum8 <- length(unique(rockstaff8$Staff.ID))
+
+rocknumstaff <- c(rocknum1, rocknum2, rocknum3, rocknum4, rocknum5, rocknum6, rocknum7, rocknum8)
+
+snstaff1 <- Immigration[Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 1,]
+snstaff2 <- Immigration[Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 2,]
+snstaff3 <- Immigration[Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 3,]
+snstaff4 <- Immigration[Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 4,]
+snstaff5 <- Immigration[Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 5,]
+snstaff6 <- Immigration[Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 6,]
+snstaff7 <- Immigration[Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 7,]
+snstaff8 <- Immigration[Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+snnum1 <- length(unique(snstaff1$Staff.ID))
+snnum2 <- length(unique(snstaff2$Staff.ID))
+snnum3 <- length(unique(snstaff3$Staff.ID))
+snnum4 <- length(unique(snstaff4$Staff.ID))
+snnum5 <- length(unique(snstaff5$Staff.ID))
+snnum6 <- length(unique(snstaff6$Staff.ID))
+snnum7 <- length(unique(snstaff7$Staff.ID))
+snnum8 <- length(unique(snstaff8$Staff.ID))
+
+snnumstaff <- c(snnum1, snnum2, snnum3, snnum4, snnum5, snnum6, snnum7, snnum8)
+
+whstaff1 <- Immigration[Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 1,]
+whstaff2 <- Immigration[Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 2,]
+whstaff3 <- Immigration[Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 3,]
+whstaff4 <- Immigration[Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 4,]
+whstaff5 <- Immigration[Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 5,]
+whstaff6 <- Immigration[Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 6,]
+whstaff7 <- Immigration[Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 7,]
+whstaff8 <- Immigration[Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+whnum1 <- length(unique(whstaff1$Staff.ID))
+whnum2 <- length(unique(whstaff2$Staff.ID))
+whnum3 <- length(unique(whstaff3$Staff.ID))
+whnum4 <- length(unique(whstaff4$Staff.ID))
+whnum5 <- length(unique(whstaff5$Staff.ID))
+whnum6 <- length(unique(whstaff6$Staff.ID))
+whnum7 <- length(unique(whstaff7$Staff.ID))
+whnum8 <- length(unique(whstaff8$Staff.ID))
+
+whnumstaff <- c(whnum1, whnum2, whnum3, whnum4, whnum5, whnum6, whnum7, whnum8)
+
+wavstaff1 <- Immigration[Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 1,]
+wavstaff2 <- Immigration[Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 2,]
+wavstaff3 <- Immigration[Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 3,]
+wavstaff4 <- Immigration[Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 4,]
+wavstaff5 <- Immigration[Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 5,]
+wavstaff6 <- Immigration[Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 6,]
+wavstaff7 <- Immigration[Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 7,]
+wavstaff8 <- Immigration[Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+wavnum1 <- length(unique(wavstaff1$Staff.ID))
+wavnum2 <- length(unique(wavstaff2$Staff.ID))
+wavnum3 <- length(unique(wavstaff3$Staff.ID))
+wavnum4 <- length(unique(wavstaff4$Staff.ID))
+wavnum5 <- length(unique(wavstaff5$Staff.ID))
+wavnum6 <- length(unique(wavstaff6$Staff.ID))
+wavnum7 <- length(unique(wavstaff7$Staff.ID))
+wavnum8 <- length(unique(wavstaff8$Staff.ID))
+
+wavnumstaff <- c(wavnum1, wavnum2, wavnum3, wavnum4, wavnum5, wavnum6, wavnum7, wavnum8)
+
+wbstaff1 <- Immigration[Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 1,]
+wbstaff2 <- Immigration[Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 2,]
+wbstaff3 <- Immigration[Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 3,]
+wbstaff4 <- Immigration[Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 4,]
+wbstaff5 <- Immigration[Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 5,]
+wbstaff6 <- Immigration[Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 6,]
+wbstaff7 <- Immigration[Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 7,]
+wbstaff8 <- Immigration[Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+wbnum1 <- length(unique(wbstaff1$Staff.ID))
+wbnum2 <- length(unique(wbstaff2$Staff.ID))
+wbnum3 <- length(unique(wbstaff3$Staff.ID))
+wbnum4 <- length(unique(wbstaff4$Staff.ID))
+wbnum5 <- length(unique(wbstaff5$Staff.ID))
+wbnum6 <- length(unique(wbstaff6$Staff.ID))
+wbnum7 <- length(unique(wbstaff7$Staff.ID))
+wbnum8 <- length(unique(wbstaff8$Staff.ID))
+
+wbnumstaff <- c(wbnum1, wbnum2, wbnum3, wbnum4, wbnum5, wbnum6, wbnum7, wbnum8)
+
+allstaff1 <- Immigration[Immigration$Last.MKB.staff.training..yrs. == 1,]
+allstaff2 <- Immigration[Immigration$Last.MKB.staff.training..yrs. == 2,]
+allstaff3 <- Immigration[Immigration$Last.MKB.staff.training..yrs. == 3,]
+allstaff4 <- Immigration[Immigration$Last.MKB.staff.training..yrs. == 4,]
+allstaff5 <- Immigration[Immigration$Last.MKB.staff.training..yrs. == 5,]
+allstaff6 <- Immigration[Immigration$Last.MKB.staff.training..yrs. == 6,]
+allstaff7 <- Immigration[Immigration$Last.MKB.staff.training..yrs. == 7,]
+allstaff8 <- Immigration[Immigration$Last.MKB.staff.training..yrs. == 8,]
+
+allnum1 <- length(unique(allstaff1$Staff.ID))
+allnum2 <- length(unique(allstaff2$Staff.ID))
+allnum3 <- length(unique(allstaff3$Staff.ID))
+allnum4 <- length(unique(allstaff4$Staff.ID))
+allnum5 <- length(unique(allstaff5$Staff.ID))
+allnum6 <- length(unique(allstaff6$Staff.ID))
+allnum7 <- length(unique(allstaff7$Staff.ID))
+allnum8 <- length(unique(allstaff8$Staff.ID))
+
+allnumstaff <- c(allnum1, allnum2, allnum3, allnum4, allnum5, allnum6, allnum7, allnum8)
+
+num.staff <- data.frame(years,
+                        Concourse = con.num.staff,
+                        Coney_Island = ci.num.staff,
+                        Crotona = cro.num.staff,
+                        East_NY = eastny.num.staff,
+                        Fort_Greene = fgnumstaff,
+                        Jamaica = jamnumstaff,
+                        Queens = queensnumstaff,
+                        Refugee = refnumstaff,
+                        Richmond = richnumstaff,
+                        Rockaway = rocknumstaff,
+                        St_Nicholas = snnumstaff,
+                        Washington_Heights = whnumstaff,
+                        Waverly = wavnumstaff,
+                        Williamsburg = wbnumstaff,
+                        Total = allnumstaff
+)
+
+# Define a server for the Shiny app
+shinyServer(function(input, output) {
+  
+  # Fill in the spot we created for a plot
+  output$errorPlot <- renderPlot({
+    
+    # Render a barplot
+    barplot(num.staff[, input$center],
+            main=input$center,
+            ylab="Number of Staff",
+            xlab="Years since Training")
+  })
+})

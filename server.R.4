@@ -1,0 +1,203 @@
+library(shiny)
+Immigration <- read.csv("errors.csv")
+
+Concourse1 <- sum(Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 1)
+Concourse2 <- sum(Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 2)
+Concourse3 <- sum(Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 3)
+Concourse4 <- sum(Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 4)
+Concourse5 <- sum(Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 5)
+Concourse6 <- sum(Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 6)
+Concourse7 <- sum(Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 7)
+Concourse8 <- sum(Immigration$Center == "Concourse" & Immigration$Last.MKB.staff.training..yrs. == 8)
+
+concourse.errors <- c(Concourse1, Concourse2, Concourse3, Concourse4, Concourse5, Concourse6, Concourse7, Concourse8)
+
+ConeyIsland1 <- sum(Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 1)
+ConeyIsland2 <- sum(Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 2)
+ConeyIsland3 <- sum(Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 3)
+ConeyIsland4 <- sum(Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 4)
+ConeyIsland5 <- sum(Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 5)
+ConeyIsland6 <- sum(Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 6)
+ConeyIsland7 <- sum(Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 7)
+ConeyIsland8 <- sum(Immigration$Center == "Coney Island" & Immigration$Last.MKB.staff.training..yrs. == 8)
+
+coneyisland.errors <- c(ConeyIsland1, ConeyIsland2, ConeyIsland3, ConeyIsland4, ConeyIsland5, ConeyIsland6, ConeyIsland7, ConeyIsland8)
+
+years <- c(1,2,3,4,5,6,7,8)
+
+crotona1 <- sum(Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 1)
+crotona2 <- sum(Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 2)
+crotona3 <- sum(Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 3)
+crotona4 <- sum(Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 4)
+crotona5 <- sum(Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 5)
+crotona6 <- sum(Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 6)
+crotona7 <- sum(Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 7)
+crotona8 <- sum(Immigration$Center == "Crotona" & Immigration$Last.MKB.staff.training..yrs. == 8)
+
+crotona.errors <- c(crotona1, crotona2, crotona3, crotona4, crotona5, crotona6, crotona7, crotona8)
+
+eastny1 <- sum(Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 1)
+eastny2 <- sum(Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 2)
+eastny3 <- sum(Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 3)
+eastny4 <- sum(Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 4)
+eastny5 <- sum(Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 5)
+eastny6 <- sum(Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 6)
+eastny7 <- sum(Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 7)
+eastny8 <- sum(Immigration$Center == "East New York" & Immigration$Last.MKB.staff.training..yrs. == 8)
+
+eastny.errors <- c(eastny1, eastny2, eastny3, eastny4, eastny5, eastny6, eastny7, eastny8)
+
+fg1 <- sum(Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 1)
+fg2 <- sum(Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 2)
+fg3 <- sum(Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 3)
+fg4 <- sum(Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 4)
+fg5 <- sum(Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 5)
+fg6 <- sum(Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 6)
+fg7 <- sum(Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 7)
+fg8 <- sum(Immigration$Center == "Fort Greene" & Immigration$Last.MKB.staff.training..yrs. == 8)
+
+fg.errors <- c(fg1, fg2, fg3, fg4, fg5, fg6, fg7, fg8)
+
+jam1 <- sum(Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 1)
+jam2 <- sum(Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 2)
+jam3 <- sum(Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 3)
+jam4 <- sum(Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 4)
+jam5 <- sum(Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 5)
+jam6 <- sum(Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 6)
+jam7 <- sum(Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 7)
+jam8 <- sum(Immigration$Center == "Jamaica" & Immigration$Last.MKB.staff.training..yrs. == 8)
+
+jam.errors <- c(jam1, jam2, jam3, jam4, jam5, jam6, jam7, jam8)
+
+queens1 <- sum(Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 1)
+queens2 <- sum(Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 2)
+queens3 <- sum(Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 3)
+queens4 <- sum(Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 4)
+queens5 <- sum(Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 5)
+queens6 <- sum(Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 6)
+queens7 <- sum(Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 7)
+queens8 <- sum(Immigration$Center == "Queens" & Immigration$Last.MKB.staff.training..yrs. == 8)
+
+queens.errors <- c(queens1, queens2, queens3, queens4, queens5, queens6, queens7, queens8)
+
+ref1 <- sum(Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 1)
+ref2 <- sum(Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 2)
+ref3 <- sum(Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 3)
+ref4 <- sum(Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 4)
+ref5 <- sum(Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 5)
+ref6 <- sum(Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 6)
+ref7 <- sum(Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 7)
+ref8 <- sum(Immigration$Center == "Refugee" & Immigration$Last.MKB.staff.training..yrs. == 8)
+
+ref.errors <- c(ref1, ref2, ref3, ref4, ref5, ref6, ref7, ref8)
+
+rich1 <- sum(Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 1)
+rich2 <- sum(Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 2)
+rich3 <- sum(Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 3)
+rich4 <- sum(Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 4)
+rich5 <- sum(Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 5)
+rich6 <- sum(Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 6)
+rich7 <- sum(Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 7)
+rich8 <- sum(Immigration$Center == "Richmond" & Immigration$Last.MKB.staff.training..yrs. == 8)
+
+rich.errors <- c(rich1, rich2, rich3, rich4, rich5, rich6, rich7, rich8)
+
+rock1 <- sum(Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 1)
+rock2 <- sum(Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 2)
+rock3 <- sum(Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 3)
+rock4 <- sum(Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 4)
+rock5 <- sum(Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 5)
+rock6 <- sum(Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 6)
+rock7 <- sum(Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 7)
+rock8 <- sum(Immigration$Center == "Rockaway" & Immigration$Last.MKB.staff.training..yrs. == 8)
+
+rock.errors <- c(rock1, rock2, rock3, rock4, rock5, rock6, rock7, rock8)
+
+sn1 <- sum(Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 1)
+sn2 <- sum(Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 2)
+sn3 <- sum(Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 3)
+sn4 <- sum(Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 4)
+sn5 <- sum(Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 5)
+sn6 <- sum(Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 6)
+sn7 <- sum(Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 7)
+sn8 <- sum(Immigration$Center == "St. Nicholas" & Immigration$Last.MKB.staff.training..yrs. == 8)
+
+sn.errors <- c(sn1, sn2, sn3, sn4, sn5, sn6, sn7, sn8)
+
+wh1 <- sum(Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 1)
+wh2 <- sum(Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 2)
+wh3 <- sum(Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 3)
+wh4 <- sum(Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 4)
+wh5 <- sum(Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 5)
+wh6 <- sum(Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 6)
+wh7 <- sum(Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 7)
+wh8 <- sum(Immigration$Center == "Washington Heights" & Immigration$Last.MKB.staff.training..yrs. == 8)
+
+wh.errors <- c(wh1, wh2, wh3, wh4, wh5, wh6, wh7, wh8)
+
+wav1 <- sum(Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 1)
+wav2 <- sum(Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 2)
+wav3 <- sum(Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 3)
+wav4 <- sum(Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 4)
+wav5 <- sum(Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 5)
+wav6 <- sum(Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 6)
+wav7 <- sum(Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 7)
+wav8 <- sum(Immigration$Center == "Waverly" & Immigration$Last.MKB.staff.training..yrs. == 8)
+
+wav.errors <- c(wav1, wav2, wav3, wav4, wav5, wav6, wav7, wav8)
+
+wb1 <- sum(Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 1)
+wb2 <- sum(Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 2)
+wb3 <- sum(Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 3)
+wb4 <- sum(Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 4)
+wb5 <- sum(Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 5)
+wb6 <- sum(Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 6)
+wb7 <- sum(Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 7)
+wb8 <- sum(Immigration$Center == "Williamsburg" & Immigration$Last.MKB.staff.training..yrs. == 8)
+
+wb.errors <- c(wb1, wb2, wb3, wb4, wb5, wb6, wb7, wb8)
+
+all1 <- sum(Immigration$Last.MKB.staff.training..yrs. == 1)
+all2 <- sum(Immigration$Last.MKB.staff.training..yrs. == 2)
+all3 <- sum(Immigration$Last.MKB.staff.training..yrs. == 3)
+all4 <- sum(Immigration$Last.MKB.staff.training..yrs. == 4)
+all5 <- sum(Immigration$Last.MKB.staff.training..yrs. == 5)
+all6 <- sum(Immigration$Last.MKB.staff.training..yrs. == 6)
+all7 <- sum(Immigration$Last.MKB.staff.training..yrs. == 7)
+all8 <- sum(Immigration$Last.MKB.staff.training..yrs. == 8)
+
+all.errors <- c(all1, all2, all3, all4, all5, all6, all7, all8)
+
+staff.errors <- data.frame(years, 
+                           Concourse = concourse.errors, 
+                           Coney_Island = coneyisland.errors, 
+                           Crotona = crotona.errors, 
+                           East_NY = eastny.errors, 
+                           Fort_Greene = fg.errors, 
+                           Jamaica = jam.errors, 
+                           Queens = queens.errors, 
+                           Refugee = ref.errors, 
+                           Richmond = rich.errors,
+                           Rockaway = rock.errors,
+                           St_Nicholas = sn.errors,
+                           Washington_Heights = wh.errors,
+                           Waverly = wav.errors,
+                           Williamsburg = wb.errors,
+                           Total = all.errors
+)
+
+
+# Define a server for the Shiny app
+shinyServer(function(input, output) {
+  
+  # Fill in the spot we created for a plot
+  output$errorPlot <- renderPlot({
+    
+    # Render a barplot
+    barplot(staff.errors[, input$center],
+            main=input$center,
+            ylab="Number of Errors",
+            xlab="Years since Training")
+  })
+})
+

@@ -1,0 +1,29 @@
+library(shiny)
+
+
+# Define the overall UI
+shinyUI(
+  
+  # Use a fluid Bootstrap layout
+  fluidPage(    
+    
+    # Give the page a title
+    titlePanel("Number of Staff who Committed Errors"),
+    
+    # Generate a row with a sidebar
+    sidebarLayout(      
+      
+      # Define the sidebar with one input
+      sidebarPanel(
+        selectInput("center", "Center:", 
+                    choices=colnames(num.staff))
+      ),
+      
+      # Create a spot for the barplot
+      mainPanel(
+        plotOutput("errorPlot")  
+      )
+      
+    )
+  )
+)
